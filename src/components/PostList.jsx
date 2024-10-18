@@ -1,6 +1,6 @@
 import Post from './Post.jsx'
 import NewPost from './NewPost.jsx'
-import './PostList.css'
+import './PostList.module.css'
 
 
 function PostList() {
