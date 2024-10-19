@@ -4,14 +4,9 @@ import Modal from './Modal'
 import PostListCss from './PostList.module.css'
 import { useState } from 'react'
 
-function PostList() {
-  const [modalIsVisible, setModalIsVisible] = useState(false)
+function PostList(props) {
   const [enteredDocNo, setEnteredDocNo] = useState('')
   const [enteredFileName, setEnteredFileName] = useState('')
-
-  function hideModalHandler() {
-    setModalIsVisible(false)
-  }
 
   function onDocNoChange(event) {
     setEnteredDocNo(event.target.value)
@@ -22,9 +17,9 @@ function PostList() {
   }
 
   let modalContent
-  if (modalIsVisible) {
-    modalContent = <Modal onClose={hideModalHandler}>
-      <NewPost onDocNoChange={onDocNoChange} onFileNameChange={onFileNameChange} />
+  if (props.isPosting) {
+    modalContent = <Modal onClose={props.onStopPosting}>
+      <NewPost onDocNoChange={onDocNoChange} onFileNameChange={onFileNameChange} onCancel={props.onStopPosting}/>
     </Modal>
   }
 

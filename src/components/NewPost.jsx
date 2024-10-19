@@ -12,6 +12,10 @@ function NewPost(props) {
         <label htmlFor="name">File Name</label>
         <textarea id="body" required rows={3} onChange={props.onFileNameChange}/>
       </p>
+      <p className={classes.actions}>
+        <button type='button' onClick={props.onCancel}>Cancel</button>
+        <button>Submit</button>
+      </p>
     </form>
   )
 }
