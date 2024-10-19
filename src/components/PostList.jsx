@@ -5,21 +5,10 @@ import PostListCss from './PostList.module.css'
 import { useState } from 'react'
 
 function PostList(props) {
-  const [enteredDocNo, setEnteredDocNo] = useState('')
-  const [enteredFileName, setEnteredFileName] = useState('')
-
-  function onDocNoChange(event) {
-    setEnteredDocNo(event.target.value)
-  }
-
-  function onFileNameChange(event) {
-    setEnteredFileName(event.target.value)
-  }
-
   let modalContent
   if (props.isPosting) {
     modalContent = <Modal onClose={props.onStopPosting}>
-      <NewPost onDocNoChange={onDocNoChange} onFileNameChange={onFileNameChange} onCancel={props.onStopPosting}/>
+      <NewPost onCancel={props.onStopPosting}/>
     </Modal>
   }
 
