@@ -5,8 +5,13 @@ import PostListCss from './PostList.module.css'
 import { useState } from 'react'
 
 function PostList() {
+  const [modalIsVisible, setModalIsVisible] = useState(true)
   const [enteredDocNo, setEnteredDocNo] = useState('')
   const [enteredFileName, setEnteredFileName] = useState('')
+
+  function hideModalHandler() {
+    setModalIsVisible(false)
+  }
 
   function onDocNoChange(event) {
     setEnteredDocNo(event.target.value)
@@ -16,11 +21,16 @@ function PostList() {
     setEnteredFileName(event.target.value)
   }
 
+  let modalContent
+  if (modalIsVisible) {
+    modalContent = <Modal onClose={hideModalHandler}>
+      <NewPost onDocNoChange={onDocNoChange} onFileNameChange={onFileNameChange} />
+    </Modal>
+  }
+
   return (
     <>
-      <Modal>
-        <NewPost onDocNoChange={onDocNoChange} onFileNameChange={onFileNameChange} />
-      </Modal>
+      {modalContent}
       <ul className={PostListCss.posts}>
         <Post docNo='01' fileName='Document 1'></Post>
         <Post docNo='02' fileName='Document 2'></Post>
