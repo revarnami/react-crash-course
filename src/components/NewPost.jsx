@@ -6,11 +6,11 @@ function NewPost(props) {
     <form className={classes.form}>
       <p>
         <label htmlFor="body">Document No</label>
-        <textarea id="body" required rows={3} onChange={props.onDocNoChange}/>
+        <input type="text" id="name" required onChange={props.onDocNoChange}/>
       </p>
       <p>
         <label htmlFor="name">File Name</label>
-        <input type="text" id="name" required onChange={props.onFileNameChange}/>
+        <textarea id="body" required rows={3} onChange={props.onFileNameChange}/>
       </p>
     </form>
   )

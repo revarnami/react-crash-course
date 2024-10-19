@@ -3,8 +3,8 @@ import postcss from './Post.module.css'
 function Post(props) {
   return (
     <div className={postcss.post}>
-      <p>#{props.docno}</p>
-      <p>{props.body}</p>
+      <p>#{props.docNo}</p>
+      <p>{props.fileName}</p>
     </div>
   )
 }
