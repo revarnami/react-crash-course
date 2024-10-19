@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import PostList from './components/PostList'
+import MainHeader from './components/MainHeader'
 
 function App() {
   return (
-    <main>
-      <PostList/>
-    </main>
+    <>
+      <MainHeader />
+      <main>
+        <PostList />
+      </main>
+    </>
   )
 }
 

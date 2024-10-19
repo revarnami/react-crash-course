@@ -5,7 +5,7 @@ import PostListCss from './PostList.module.css'
 import { useState } from 'react'
 
 function PostList() {
-  const [modalIsVisible, setModalIsVisible] = useState(true)
+  const [modalIsVisible, setModalIsVisible] = useState(false)
   const [enteredDocNo, setEnteredDocNo] = useState('')
   const [enteredFileName, setEnteredFileName] = useState('')
 
