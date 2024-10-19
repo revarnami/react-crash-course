@@ -16,9 +16,10 @@ function NewPost(props) {
   function submitHandler(event) {
     event.preventDefault()
     const postData = {
-      docNo: onDocNoChange,
-      fileName: onFileNameChange
+      docNo: enteredDocNo,
+      fileName: enteredFileName
     }
+    props.onAddPost(postData)
     props.onCancel()
   }
 
