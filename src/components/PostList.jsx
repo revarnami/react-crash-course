@@ -1,15 +1,15 @@
 import Post from './Post.jsx'
 import NewPost from './NewPost.jsx'
-import './PostList.module.css'
+import PostListCss from './PostList.module.css'
 
 
 function PostList() {
   return (
     <>
       <NewPost />
-      <ul className='posts'>
-        <Post DocNo='01' FileName='Document 1'></Post>
-        <Post DocNo='02' FileName='Document 2'></Post>
+      <ul className={PostListCss.posts}>
+        <Post docno='01' body='Document 1'></Post>
+        <Post docno='02' body='Document 2'></Post>
       </ul>
     </>
   )

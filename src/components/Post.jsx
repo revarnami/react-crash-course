@@ -1,10 +1,10 @@
-import PostCss from './Post.module.css'
+import postcss from './Post.module.css'
 
 function Post(props) {
   return (
-    <div className={PostCss.div}>
-      <p>#{props.DocNo}</p>
-      <p>{props.FileName}</p>
+    <div className={postcss.post}>
+      <p>#{props.docno}</p>
+      <p>{props.body}</p>
     </div>
   )
 }
