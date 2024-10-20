@@ -1,11 +1,14 @@
+import { Link } from 'react-router-dom'
 import postcss from './Post.module.css'
 
 function Post(props) {
   return (
-    <div className={postcss.post}>
-      <p>#{props.docNo}</p>
-      <p>{props.fileName}</p>
-    </div>
+    <li className={postcss.post}>
+      <Link to={props.id}>
+        <p>#{props.docNo}</p>
+        <p>{props.fileName}</p>
+      </Link>
+    </li>
   )
 }
 
